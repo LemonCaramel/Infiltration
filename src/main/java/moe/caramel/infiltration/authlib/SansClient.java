@@ -56,6 +56,6 @@ public final class SansClient extends MinecraftClient {
 
     @Override
     public <T> T post(URL url, Object body, Class<T> responseClass) {
-        return Util.loop(() -> super.post(url, responseClass, responseClass));
+        return Util.loop(() -> super.post(url, body, responseClass));
     }
 }
