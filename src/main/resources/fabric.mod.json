@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "infiltration",
+  "version": "${version}",
+  "name": "Infiltration",
+  "description": "Whose fault is it? Mojang? or ISP?",
+  "authors": [
+    "LemonCaramel"
+  ],
+  "contact": {
+    "repo": "https://github.com/LemonCaramel/Infiltration",
+    "issues": "https://github.com/LemonCaramel/Infiltration/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/infiltration/icon.png",
+  "environment": "*",
+  "mixins": [
+    "infiltration.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.10",
+    "minecraft": ">=1.19"
+  }
+}

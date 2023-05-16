@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "moe.caramel.infiltration.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "MixinClientMinecraft"
+  ],
+  "mixins": [
+    "MixinServerMinecraft",
+    "MixinYggdrasilUserApiService"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
