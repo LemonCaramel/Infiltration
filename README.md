@@ -4,8 +4,8 @@
 
 Introduction
 --------
-- Since a while ago, South Korea has a problem of failing to access the authentication server.
- This mod reduces the probability of a problem by making multiple requests to the authentication server.
+- Since a while ago, South Korea has a problem of failing to access the authentication server. ([WEB-6504](https://bugs.mojang.com/browse/WEB-6504))
+ This mod reduces the probability of a problem by [changing the host](https://www.koreaminecraft.net/free/3489955) and making multiple requests to the authentication server.
  ![login-failed](https://github.com/LemonCaramel/Infiltration/assets/45729082/04a0b6a4-9d9b-4c79-b46a-1659c41c8571)
 
 

@@ -3,6 +3,8 @@ package moe.caramel.infiltration;
 import com.mojang.authlib.exceptions.AuthenticationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.net.URL;
+import java.util.List;
 import java.util.function.Supplier;
 
 /**
@@ -15,7 +17,7 @@ public final class Util {
     /**
      * 최대 재연결 가능 횟수
      */
-    private static final int MAX_RETRY_COUNT = 10;
+    private static final int MAX_RETRY_COUNT = 3;
 
     /**
      * 작업에 오류가 발생 시 최대 {@link #MAX_RETRY_COUNT}번 다시 실행합니다.
@@ -69,5 +71,25 @@ public final class Util {
             LOGGER.error("연결에 오류가 지속적으로 발생하여 연결을 포기했습니다. :rofl:");
             throw exception;
         }
+    }
+
+    // =====================================================
+
+    /**
+     * DEATH NOTE
+     */
+    public static final List<String> DEATH_NOTE = List.of(
+        /* AWS => "authserver.mojang.com" */
+        "api.mojang.com", "sessionserver.mojang.com",
+        "api.minecraftservices.com"
+    );
+
+    public static String getNewUrl(final URL url) {
+        String s;
+        return url.getProtocol()
+                // https://www.koreaminecraft.net/free/3489955
+                + "://star-azureedge-prod.trafficmanager.net"
+                + ((s = url.getPath()) != null ? s : "")
+                + ((s = url.getQuery()) != null ? '?' + s : "");
     }
 }

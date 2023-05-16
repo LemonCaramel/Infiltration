@@ -1,6 +1,5 @@
 package moe.caramel.infiltration.authlib;
 
-import com.mojang.authlib.minecraft.client.MinecraftClient;
 import moe.caramel.infiltration.Util;
 import java.net.Proxy;
 import java.net.URL;
@@ -38,24 +37,24 @@ import java.net.URL;
  * ⠀⠀⠀⠿⣤⣤⣤⣤⣤⣤⣤⣿⢿⣿⡷⠆⠀⠀⠀⠀⠀⠀⠶⣿⣿⣿⣿⣿⣿⣭⣬⣭⣭⣥⣬⣭⣽⠿⠋⠁⠀
  * ⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠈⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀
  */
-public final class SansClient extends MinecraftClient {
+public final class SansClient extends TemmieClient {
 
     public SansClient(final String accessToken, final Proxy proxy) {
         super(accessToken, proxy);
     }
 
     @Override
-    public <T> T get(URL url, Class<T> responseClass) {
+    public <T> T get(final URL url, final Class<T> responseClass) {
         return Util.loop(() -> super.get(url, responseClass));
     }
 
     @Override
-    public <T> T post(URL url, Class<T> responseClass) {
+    public <T> T post(final URL url, final Class<T> responseClass) {
         return Util.loop(() -> super.post(url, responseClass));
     }
 
     @Override
-    public <T> T post(URL url, Object body, Class<T> responseClass) {
+    public <T> T post(final URL url, final Object body, final Class<T> responseClass) {
         return Util.loop(() -> super.post(url, body, responseClass));
     }
 }
